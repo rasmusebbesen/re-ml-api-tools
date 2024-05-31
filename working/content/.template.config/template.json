@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "MonstarLab",
+  "classifications": [ "Common", "Code" ],
+  "identity": "MonstarLab.ApiTools",
+  "name": "MonstarLab: Api tools and extensions",
+  "shortName": "mlapi",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "ClassName":{
+      "type": "parameter",
+      "description": "Override placeholder 'ProjectName'.",
+      "datatype": "text",
+      "replaces": "ProjectName",
+      "fileRename": "ProjectName",
+      "defaultValue": "ProjectName"
+    }
+  }
+}
