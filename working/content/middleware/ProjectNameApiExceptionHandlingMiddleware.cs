@@ -46,7 +46,28 @@ public class ProjectNameApiExceptionHandlingMiddleware(RequestDelegate next, boo
                 break;
         }
 
+        var errorResponse = new ApiErrorResponse
+        {
+            Error = new ApiErrorResponse.ApiError
+            {
+                LocalizedMessage = null,
+                LocalizedTitle = null,
+                Message = exception?.Message ?? "Error with no message",
+                IsRecoverable = false,
+                Identifier = null,
+                Source = null
+            },
+            Payload = new ApiErrorResponse.ApiPayload
+            {
+                ValidationErrors = []
+            },
+            Metadata = new ApiErrorResponse.ApiMetaData
+            {
+                ErrorId = null
+            }
+        };
+
         context.Response.StatusCode = (int)code;
-        await context.Response.WriteAsync(JsonConvert.SerializeObject(result));
+        await context.Response.WriteAsync(JsonConvert.SerializeObject(errorResponse));
     }
 }

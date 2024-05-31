@@ -24,7 +24,7 @@ public class ApiErrorResponse
         // Is the error handled in the UI is fatal or can it be recovered, eg: try again
         public bool IsRecoverable {get; set; }
         // Identifier which the consumer of the API can parse and switch case on
-        public string Identifier { get; set; }
+        public string? Identifier { get; set; }
         // In micro services architecture, you might want to understand what service
         public string? Source { get; set; }
     }
@@ -59,6 +59,6 @@ public class ApiErrorResponse
 
     public struct ApiMetaData
     {
-        public string ErrorId { get; set; }
+        public string? ErrorId { get; set; }
     }
 }

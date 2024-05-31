@@ -2,19 +2,19 @@ namespace ProjectName.Api.Exceptions;
 
 using System.Net;
 
-public class ProjectNameNotFoundAccessApiException : ProjectNameBaseApiException
+public class ProjectNameNotFoundApiException : ProjectNameBaseApiException
 {
     public new const HttpStatusCode StatusCode = HttpStatusCode.NotFound;
 
-    public ProjectNameNotFoundAccessApiException()
+    public ProjectNameNotFoundApiException()
     {
     }
 
-    public ProjectNameNotFoundAccessApiException(string message) : base(message)
+    public ProjectNameNotFoundApiException(string message) : base(message)
     {
     }
 
-    public ProjectNameNotFoundAccessApiException(string message, Exception inner) : base(message, inner)
+    public ProjectNameNotFoundApiException(string message, Exception inner) : base(message, inner)
     {
     }
 }
